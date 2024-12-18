@@ -63,6 +63,7 @@ def IsMagicSquare(matrix):
     if not validateMatrixValues(matrix):
         return False
 
+    # Get the magic sum of the matrix as base value.
     magic_sum = getMagicSum(matrix)
 
     # Check if all rows have the same sum i.e. magic sum.
