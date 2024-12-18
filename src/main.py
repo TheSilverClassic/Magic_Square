@@ -80,7 +80,6 @@ def IsMagicSquare(matrix):
 
     return True
 
-# Example given in the problem statement
 test_matrix_1 = [
     [2, 7, 6],
     [9, 5, 1],
@@ -88,7 +87,6 @@ test_matrix_1 = [
 ]
 print(IsMagicSquare(test_matrix_1))  # Expected: True
 
-# Another known 3x3 Magic Square
 test_matrix_2 = [
     [8, 1, 6],
     [3, 5, 7],
