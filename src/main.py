@@ -42,6 +42,17 @@ def checkColumns(matrix, magic_sum):
 
     return True
 
+def checkDiagonals(matrix, magic_sum):
+    size = len(matrix)
+    diagonal_1 = 0
+    diagonal_2 = 0
+
+    for i in range(size):
+        diagonal_1 += matrix[i][i]
+        diagonal_2 += matrix[i][size - i - 1]
+
+    return diagonal_1 == magic_sum and diagonal_2 == magic_sum
+
 def IsMagicSquare(matrix):
     size = len(matrix)
     # Check if our matrix is square shaped.
@@ -62,7 +73,9 @@ def IsMagicSquare(matrix):
     if not checkColumns(matrix, magic_sum):
         return False
 
-
+    # Check if both diagonals have the same sum i.e. magic sum.
+    if not checkDiagonals(matrix, magic_sum):
+        return False
 
     return True
 
