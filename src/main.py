@@ -25,6 +25,16 @@ def validateMatrixValues(matrix):
 
     return True
 
+def getMagicSum(matrix):
+    return sum(matrix[0])
+
+def checkRows(matrix, magic_sum):
+    for row in matrix:
+        if sum(row) != magic_sum:
+            return False
+
+    return True
+
 def IsMagicSquare(matrix):
     size = len(matrix)
     # Check if our matrix is square shaped.
@@ -33,6 +43,12 @@ def IsMagicSquare(matrix):
 
     # Check if values are distinct and in the range of 1 to n^2.
     if not validateMatrixValues(matrix):
+        return False
+
+    magic_sum = getMagicSum(matrix)
+
+    # Check if all rows have the same sum i.e. magic sum.
+    if not checkRows(matrix, magic_sum):
         return False
 
     return True
