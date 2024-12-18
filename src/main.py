@@ -5,7 +5,7 @@ def isSquare(matrix):
         return False
 
     for row in matrix:
-        if len(row) < size:
+        if len(row) != size:
             return False
 
     return True
@@ -80,10 +80,45 @@ def IsMagicSquare(matrix):
 
     return True
 
+# Example given in the problem statement
 test_matrix_1 = [
     [2, 7, 6],
     [9, 5, 1],
     [4, 3, 8]
 ]
+print(IsMagicSquare(test_matrix_1))  # Expected: True
 
-print(IsMagicSquare(test_matrix_1))
+# Another known 3x3 Magic Square
+test_matrix_2 = [
+    [8, 1, 6],
+    [3, 5, 7],
+    [4, 9, 2]
+]
+print(IsMagicSquare(test_matrix_2))  # Expected: True
+
+# A non-magic square (incorrect sums)
+test_matrix_3 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+print(IsMagicSquare(test_matrix_3))  # Expected: False
+
+# A square missing distinctness (repeated number)
+test_matrix_4 = [
+    [2, 7, 6],
+    [9, 5, 1],
+    [4, 3, 3]  # repeated 3 instead of 8
+]
+print(IsMagicSquare(test_matrix_4))  # Expected: False
+
+# A non-square matrix
+test_matrix_5 = [
+    [2, 7, 6],
+    [9, 5, 1]
+]
+print(IsMagicSquare(test_matrix_5))  # Expected: False
+
+# Empty matrix
+test_matrix_6 = []
+print(IsMagicSquare(test_matrix_6))  # Expected: False
