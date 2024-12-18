@@ -40,6 +40,8 @@ def checkColumns(matrix, magic_sum):
         if sum(col) != magic_sum:
             return False
 
+    return True
+
 def IsMagicSquare(matrix):
     size = len(matrix)
     # Check if our matrix is square shaped.
